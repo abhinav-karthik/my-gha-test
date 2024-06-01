@@ -1,0 +1,31 @@
+name: myforkflow
+run-name: js wf
+on: push
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        environment: production
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v3
+              with:
+                node-version: 20
+            - name: first step
+              run: npm ci
+            - name: second step
+              run: npm test
+            - name: third step
+              run: npm lint
+                
+    second-job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: my name
+            run: echo hello world
+            
+
+            
+
+
+            
+
