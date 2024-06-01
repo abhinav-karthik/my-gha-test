@@ -1,0 +1,24 @@
+name: publish packages to github
+on: release
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+        steps:
+            - name: checkout
+              uses: actions/checkout@v4
+            - name: setup node
+              uses: actions/setup-node@v3
+              with:
+                node-version: 16
+                registery-url: https://npm.pkg.github.com
+            - name: install
+              run: npm ci
+            - name: publish
+              run: npm publish
+              env:
+                NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                
+            

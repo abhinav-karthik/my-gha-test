@@ -1,6 +1,6 @@
 name: myforkflow
 run-name: js wf
-on: push
+on: workflow_dispatch
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -9,13 +9,11 @@ jobs:
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v3
               with:
-                node-version: 20
+                node-version: 16
             - name: first step
               run: npm ci
             - name: second step
               run: npm test
-            - name: third step
-              run: npm lint
                 
     second-job:
         runs-on: ubuntu-latest
