@@ -10,5 +10,8 @@ jobs:
         image: postgresql
       python:
         image: python
+    steps:
+      - run: echo "hello world"
+      
       
   
