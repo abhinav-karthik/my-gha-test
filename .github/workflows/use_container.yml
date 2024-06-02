@@ -1,0 +1,16 @@
+name: this is side title
+run-name: this is run title
+on: 
+  pull_request:
+    types: labelled
+  issues:
+    types: labelled
+jobs:
+  build:
+   runs-on: ubuntu-latest
+   container:
+      image: python
+   steps:
+     - name: greet
+       run: hello world
+   
