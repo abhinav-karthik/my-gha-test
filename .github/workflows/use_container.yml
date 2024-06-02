@@ -2,9 +2,9 @@ name: this is side title
 run-name: this is run title
 on: 
   pull_request:
-    types: labelled
+    types: labeled
   issues:
-    types: labelled
+    types: labeled
 jobs:
   build:
    runs-on: ubuntu-latest
