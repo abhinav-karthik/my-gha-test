@@ -12,5 +12,5 @@ jobs:
       image: python
    steps:
      - name: greet
-       run: hello world
+       run: echo "hello world"
    
