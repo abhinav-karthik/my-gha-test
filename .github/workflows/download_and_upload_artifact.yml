@@ -2,20 +2,9 @@ name: this is side name
 run-name: this is run name
 on: push
 jobs:
-  upload-artifact:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-      - name: upload
-        uses: actions/upload-artifact@v4
-        with:
-          name: my-art-name
-          path: src/test/
         
   donwload-artifact:
     runs-on: ubuntu-latest
-    needs: upload-artifact
     steps:
       - name: checking can i download artifact
         uses: actions/download-artifact@v4
