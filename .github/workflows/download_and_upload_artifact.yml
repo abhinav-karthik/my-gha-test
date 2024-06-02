@@ -12,3 +12,16 @@ jobs:
         with:
           name: my-art-name
           path: src/test/
+        
+  donwload-artifact:
+    runs-on: ubutnu-latest
+    steps:
+      - name: checking can i download artifact
+        uses: actions/download-artifact@v4
+        with: 
+          name: my-art-name
+      - name: display
+        run: cat setup.js
+      - name: ls
+        run: ls
+        
