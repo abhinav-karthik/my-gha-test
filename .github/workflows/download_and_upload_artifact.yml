@@ -14,7 +14,7 @@ jobs:
           path: src/test/
         
   donwload-artifact:
-    runs-on: ubutnu-latest
+    runs-on: ubuntu-latest
     needs: upload-artifact
     steps:
       - name: checking can i download artifact
