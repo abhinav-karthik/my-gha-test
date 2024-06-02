@@ -1,16 +1,14 @@
-name: this is side title
-run-name: this is run title
-on: 
-  pull_request:
-    types: labeled
-  issues:
-    types: labeled
+name: service container
+run-name: service container
+on: pull_request
 jobs:
   build:
-   runs-on: ubuntu-latest
-   container:
-      image: python
-   steps:
-     - name: greet
-       run: echo "hello world"
-   
+    runs-on: ubuntu-latest
+    container: node
+    services:
+      db:
+        image: postgresql
+      python:
+        image: python
+      
+  
